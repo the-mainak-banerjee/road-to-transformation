@@ -1,41 +1,30 @@
-name: Lint
+name: ESLint and Prettier Linting
 
 on:
-  pull_request:
-    types: [ opened, synchronize, reopened ]
+  push:
+    branches:
+      - main # Change this to your main branch name
 
 jobs:
   lint:
-    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          fetch-depth: 0
-
-      # Refer to this documentation https://nextjs.org/docs/pages/building-your-application/deploying/ci-build-caching#github-actions
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          node-version: 14 # You can change this to your preferred Node.js version
 
       - name: Install dependencies
-        id: 'install-dependencies'
-        run: yarn
+        run: npm install
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          github_token: ${{ github.token }}
-          # Enable linters
-          eslint: true
-          prettier: true
+      - name: ESLint Linting
+        run: npx eslint .
+        # You may need to adjust the paths if your code is in a different directory
+
+      - name: Prettier Linting
+        run: npx prettier --check .
+        # You may need to adjust the paths if your code is in a different directory
