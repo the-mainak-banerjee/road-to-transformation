@@ -1,0 +1,6 @@
+build
+node_modules
+bin
+*.d.ts
+*.generated.tsx
+*.config.js

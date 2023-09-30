@@ -8,9 +8,7 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-   "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -39,6 +37,5 @@
     "class-methods-use-this": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
-  },
-  "ignorePatterns": ["node_modules/", "build/", "next.config.js", "postcss.config.js"]
+  }
 }
