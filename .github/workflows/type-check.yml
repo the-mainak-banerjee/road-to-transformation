@@ -1,0 +1,27 @@
+name: Type check
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Type check
+        run: yarn type-check
+
+      - name: Build
+        run: yarn run build
