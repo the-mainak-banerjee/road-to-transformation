@@ -34,6 +34,10 @@
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
+    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }],
+    "react/function-component-definition": [<enabled>, {
+  "namedComponents": "function-declaration" | "function-expression" | "arrow-function" | Array<"function-declaration" | "function-expression" | "arrow-function">,
+  "unnamedComponents": "function-expression" | "arrow-function" | Array<"function-expression" | "arrow-function">
+}]
   }
 }
