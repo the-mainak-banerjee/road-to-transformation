@@ -1,5 +1,5 @@
-import { IButtonProps } from ".";
+import { IButtonProps } from '.';
 
 export const buttonMockData: IButtonProps = {
-    status: 'primary'
-}
+  status: 'primary',
+};
