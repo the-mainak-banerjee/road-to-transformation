@@ -1,6 +1,5 @@
-import React from 'react';
 import { IButtonProps } from './Button.types';
 
-export function Button({ status }: IButtonProps) {
-  return <button>Button</button>;
+export function Button({ type = 'button' }: IButtonProps) {
+  return <button type={type === 'button' ? 'button' : 'submit'}>Button</button>;
 }
