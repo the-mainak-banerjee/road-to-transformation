@@ -3,5 +3,5 @@ export default function Home() {
     <main>
       <p className="text-blue-400">Road To Transformation</p>
     </main>
-  );
+  )
 }
