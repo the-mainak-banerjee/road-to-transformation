@@ -6,11 +6,10 @@
     "airbnb",
     "airbnb-typescript",
     "plugin:react/jsx-runtime",
+    "eslint-config-prettier",
     "prettier"
   ],
-   "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },

@@ -1,14 +1,14 @@
-import { Meta } from '@storybook/react';
-import { Button, IButtonProps } from '.';
-import { buttonMockData } from './Button.mock';
+import { Meta } from '@storybook/react'
+import { Button, IButtonProps } from '.'
+import { buttonMockData } from './Button.mock'
 
 export default {
   title: 'Components/Button',
-} as Meta;
+} as Meta
 
 export function ButtonStory(args: IButtonProps) {
-  return <Button {...args} />;
+  return <Button {...args} />
 }
 
-ButtonStory.storyName = 'Default';
-ButtonStory.args = buttonMockData;
+ButtonStory.storyName = 'Default'
+ButtonStory.args = buttonMockData
